@@ -1,0 +1,150 @@
+:root {
+    --bg-color: #0f172a; /* Fondo muy oscuro, casi negro */
+    --card-bg: #1e293b; /* Color de tarjeta más claro */
+    --text-color: #f8fafc; /* Texto claro */
+    --accent-color: #38bdf8; /* Azul brillante */
+    --header-gradient: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+    --card-hover-box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilos Generales del Sitio */
+/* Estilos para el Header del Sitio */
+.sitio-header {
+    text-align: center;
+    padding: 3rem 1rem 2rem 1rem; /* Ajustamos el espacio interno */
+    background: var(--header-gradient);
+    border-bottom: 1px solid #334155;
+    
+    /* Usamos flexbox para alinear todo verticalmente en el centro */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 1rem; /* Separa de forma pareja el H1, el P y la Imagen */
+}
+
+.sitio-header h1 {
+    font-size: 2.8rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.sitio-header p {
+    font-size: 1.1rem;
+    color: #94a3b8; /* Un tono gris claro muy sutil */
+    max-width: 600px;
+    margin-bottom: 1rem; /* Un extra de separación antes de la foto */
+}
+
+/* Estilos específicos para la foto de presentación */
+.sitio-header img {
+    width: 100%;
+    max-width: 1500px; /* Evita que la imagen se estire infinitamente en pantallas gigantes */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    border-radius: 16px; /* Bordes redondeados modernos para que haga juego con las tarjetas */
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 
+                0 8px 10px -6px rgba(0, 0, 0, 0.5); /* Sombra profunda para darle relieve */
+    border: 2px solid #334155; /* Un borde sutil para integrarla con el fondo oscuro */
+    object-fit: cover;
+    
+    transition: transform 0.3s ease; /* Por si querés que haga un pequeño efecto al pasar el mouse */
+}
+
+/* Efecto sutil opcional al pasar el mouse por la imagen de portada */
+.sitio-header img:hover {
+    transform: scale(1.01);
+}
+
+.sitio-footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+    background-color: #1e293b;
+    border-top: 1px solid #334155;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* Estilos de las Categorías */
+#main-gallery {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+}
+
+.categoria {
+    margin-bottom: 3rem;
+}
+
+.categoria-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #334155;
+    padding-bottom: 0.5rem;
+}
+
+.categoria-header h2 {
+    font-size: 1.75rem;
+    color: var(--text-color);
+}
+
+.categoria-grid {
+    display: grid;
+    /* Crear columnas automáticas, mínimo 280px */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Estilos de las Tarjetas de Imagen */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-box-shadow);
+}
+
+.card img {
+    width: 100%;
+    height: 250px; /* Altura fija para uniformidad */
+    object-fit: cover; /* Evita deformaciones */
+    display: block;
+}
+
+.card-description {
+    padding: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    border-top: 1px solid #334155;
+}
+
+/* Ajustes para Pantallas Medianas (opcional) */
+@media (min-width: 768px) {
+    .sitio-header {
+        padding: 4rem 1rem;
+    }
+    .categoria-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+}
