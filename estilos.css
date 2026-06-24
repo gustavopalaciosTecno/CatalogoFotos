@@ -242,6 +242,11 @@ a{
     text-decoration: none;
 }
 
+/* p,span:hover{
+    font-size: 1.5rem;
+    transition: 2ms all;
+} */
+
 /* RESPONSIVE DESIGN / MEDIOS COMPATIBLES */
 @media (max-width: 768px) {
     .nav-flotante {
