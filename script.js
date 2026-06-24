@@ -91,7 +91,35 @@ const galeriaPorCategorias = {
         { src: 'img/07-CONOCEMOS/47.jpeg', descripcion: 'Mural de fin de año' },
       
     ],
-    // "Nueva Categoría": [ ... ], // ¡Agrega todas las que necesites!
+
+     "LOS CLASIFICAMOS!!!": [
+        { src: 'img/08-CLASIFICAMOS/01.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/02.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/03.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/04.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/05.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/06.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/07.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/08.jpeg', descripcion: 'los clasificamos!!!' },
+         { src: 'img/08-CLASIFICAMOS/09.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/10.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/11.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/12.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/13.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/14.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/15.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/16.jpeg', descripcion: 'los clasificamos!!!' },
+         { src: 'img/08-CLASIFICAMOS/17.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/18.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/19.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/20.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/21.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/22.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/23.jpeg', descripcion: 'los clasificamos!!!' },
+        { src: 'img/08-CLASIFICAMOS/24.jpeg', descripcion: 'los clasificamos!!!' },
+        
+    ],
+    
 };
 
 const mainElement = document.getElementById('main-gallery');
