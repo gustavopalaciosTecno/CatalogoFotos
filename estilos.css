@@ -28,6 +28,27 @@ body {
     padding-bottom: 80px; /* 🚀 ESTA LÍNEA NUEVA le da el espacio necesario para que la botonera flotante no tape nada */
 }
 
+h2,h3{
+    font-weight: bold;
+    font-size: 2rem;
+}
+span{
+    color: rgb(211, 214, 48);
+}
+
+i{
+    margin: 5px;
+    color: #38bdf8;
+}
+
+b{
+    display: flex;
+    flex-direction: column;
+    margin: 1.5%;
+    color: rgb(192, 74, 74);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 /* Estilos para el Header del Sitio */
 .sitio-header {
     text-align: center;
