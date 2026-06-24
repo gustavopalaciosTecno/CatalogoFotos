@@ -72,22 +72,33 @@ body {
     transform: scale(1.01);
 }
 
-/* NAVEGACIÓN FLOTANTE (BOTONERA) */
+/* NAVEGACIÓN FLOTANTE (BOTONERA) - COMPATIBILIDAD TOTAL */
 .nav-flotante {
     position: fixed;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%); /* Centrado perfecto en pantalla */
-    background-color: rgba(30, 41, 59, 0.85); /* Efecto translúcido */
-    backdrop-filter: blur(8px); /* Esmerilado moderno */
-    -webkit-backdrop-filter: blur(8px);
-    padding: 10px 20px;
+    transform: translateX(-50%); 
+    background-color: rgba(30, 41, 59, 0.88); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); /* Soporte para Safari/Chrome antiguos */
+    padding: 10px 16px;
     border-radius: 30px;
+    
+    /* Forzamos el comportamiento Flex de forma estricta */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    gap: 12px;
+    gap: 8px; 
+    
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 1000; /* Siempre visible por encima de las imágenes */
+    z-index: 1000;
+    
+    /* Control estricto del ancho para evitar desbordes raros */
+    width: max-content;
+    max-width: 95vw; 
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 .btn-nav {
@@ -95,10 +106,15 @@ body {
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
-    padding: 6px 14px;
+    padding: 8px 14px;
     border-radius: 20px;
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
-    white-space: nowrap;
+    
+    /* Asegura que Chrome trate al botón como un bloque rígido que no se deforma */
+    display: inline-block;
+    white-space: nowrap; 
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0; 
 }
 
 .btn-nav:hover {
@@ -153,6 +169,11 @@ body {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    
+    /* Forzamos a que todas las tarjetas de una misma fila midan lo mismo */
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
 }
 
 .card:hover {
@@ -170,9 +191,20 @@ body {
 .card-description {
     padding: 1.25rem;
     font-size: 1rem;
-    line-height: 1.5;
+    font-weight: 600; /* Le da un poquito más de cuerpo al texto */
+    line-height: 1.4;
     text-align: center;
     border-top: 1px solid #334155;
+    
+    /* Centrado interno perfecto del texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Hace que el fondo oscuro ocupe todo el alto disponible de manera uniforme */
+    
+    /* Control de desborde de texto */
+    word-break: break-word; /* Rompe palabras demasiado largas si es necesario */
+    hyphens: auto;
 }
 
 .sitio-footer {
@@ -183,6 +215,10 @@ body {
     font-size: 0.9rem;
     color: #94a3b8;
     width: 100%;
+}
+
+a{
+    text-decoration: none;
 }
 
 /* RESPONSIVE DESIGN / MEDIOS COMPATIBLES */
