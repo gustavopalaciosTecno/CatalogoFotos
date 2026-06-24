@@ -7,6 +7,11 @@
     --card-hover-box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.3);
 }
 
+/* COMPORTAMIENTO GLOBAL */
+html {
+    scroll-behavior: smooth; /* Logra el efecto de deslizamiento suave al tocar los botones */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -22,19 +27,17 @@ body {
     min-height: 100vh;
 }
 
-/* Estilos Generales del Sitio */
 /* Estilos para el Header del Sitio */
 .sitio-header {
     text-align: center;
-    padding: 3rem 1rem 2rem 1rem; /* Ajustamos el espacio interno */
+    padding: 3rem 1rem 2rem 1rem; 
     background: var(--header-gradient);
     border-bottom: 1px solid #334155;
     
-    /* Usamos flexbox para alinear todo verticalmente en el centro */
     display: flex;
     flex-direction: column;
     align-items: center; 
-    gap: 1rem; /* Separa de forma pareja el H1, el P y la Imagen */
+    gap: 1rem; 
 }
 
 .sitio-header h1 {
@@ -46,41 +49,68 @@ body {
 
 .sitio-header p {
     font-size: 1.1rem;
-    color: #94a3b8; /* Un tono gris claro muy sutil */
+    color: #94a3b8; 
     max-width: 600px;
-    margin-bottom: 1rem; /* Un extra de separación antes de la foto */
+    margin-bottom: 1rem; 
 }
 
-/* Estilos específicos para la foto de presentación */
+/* Foto de presentación */
 .sitio-header img {
     width: 100%;
-    max-width: 1500px; /* Evita que la imagen se estire infinitamente en pantallas gigantes */
-    height: auto; /* Mantiene la proporción original de la imagen */
-    border-radius: 16px; /* Bordes redondeados modernos para que haga juego con las tarjetas */
+    max-width: 1500px; 
+    height: auto; 
+    border-radius: 16px; 
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 
-                0 8px 10px -6px rgba(0, 0, 0, 0.5); /* Sombra profunda para darle relieve */
-    border: 2px solid #334155; /* Un borde sutil para integrarla con el fondo oscuro */
+                0 8px 10px -6px rgba(0, 0, 0, 0.5); 
+    border: 2px solid #334155; 
     object-fit: cover;
-    
-    transition: transform 0.3s ease; /* Por si querés que haga un pequeño efecto al pasar el mouse */
+    transition: transform 0.3s ease; 
 }
 
-/* Efecto sutil opcional al pasar el mouse por la imagen de portada */
 .sitio-header img:hover {
     transform: scale(1.01);
 }
 
-.sitio-footer {
-    text-align: center;
-    padding: 2rem;
-    margin-top: auto;
-    background-color: #1e293b;
-    border-top: 1px solid #334155;
-    font-size: 0.9rem;
-    color: #94a3b8;
+/* NAVEGACIÓN FLOTANTE (BOTONERA) */
+.nav-flotante {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Centrado perfecto en pantalla */
+    background-color: rgba(30, 41, 59, 0.85); /* Efecto translúcido */
+    backdrop-filter: blur(8px); /* Esmerilado moderno */
+    -webkit-backdrop-filter: blur(8px);
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex;
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000; /* Siempre visible por encima de las imágenes */
 }
 
-/* Estilos de las Categorías */
+.btn-nav {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+    white-space: nowrap;
+}
+
+.btn-nav:hover {
+    background-color: var(--accent-color);
+    color: #0f172a;
+    transform: translateY(-2px);
+}
+
+.btn-nav:active {
+    transform: translateY(0);
+}
+
+/* Estilos del Contenedor Principal y Categorías */
 #main-gallery {
     max-width: 1400px;
     margin: 0 auto;
@@ -89,7 +119,8 @@ body {
 }
 
 .categoria {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem; /* Un poco más de espacio entre bloques de categorías */
+    scroll-margin-top: 20px; /* Evita que el menú tape el título al clickear un botón */
 }
 
 .categoria-header {
@@ -105,9 +136,9 @@ body {
 
 .categoria-grid {
     display: grid;
-    /* Crear columnas automáticas, mínimo 280px */
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
+    justify-content: center;
 }
 
 /* Estilos de las Tarjetas de Imagen */
@@ -126,8 +157,8 @@ body {
 
 .card img {
     width: 100%;
-    height: 250px; /* Altura fija para uniformidad */
-    object-fit: cover; /* Evita deformaciones */
+    height: 250px; 
+    object-fit: cover; 
     display: block;
 }
 
@@ -139,12 +170,47 @@ body {
     border-top: 1px solid #334155;
 }
 
-/* Ajustes para Pantallas Medianas (opcional) */
-@media (min-width: 768px) {
-    .sitio-header {
-        padding: 4rem 1rem;
+.sitio-footer {
+    text-align: center;
+    padding: 3rem 2rem; /* Más espacio en el footer */
+    margin-top: auto;
+    background-color: #1e293b;
+    border-top: 1px solid #334155;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* RESPONSIVE DESIGN / MEDIOS COMPATIBLES */
+@media (max-width: 768px) {
+    .nav-flotante {
+        width: 92%;
+        overflow-x: auto; /* Mantiene el desplazamiento con el dedo */
+        white-space: nowrap;
+        justify-content: flex-start;
+        padding: 10px 14px; /* Un poco más de aire interno */
+        bottom: 15px;
+        
+        /* Suaviza el deslizamiento táctil en pantallas iOS y Android */
+        -webkit-overflow-scrolling: touch;
+        
+        /* Sutil indicador visual de que la barra se puede deslizar */
+        mask-image: linear-gradient(to right, black 85%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
     }
-    .categoria-grid {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+    /* Ocultamos por completo la barra de scroll clásica en todos los navegadores móviles */
+    .nav-flotante::-webkit-scrollbar {
+        display: none; 
+    }
+    .nav-flotante {
+        -ms-overflow-style: none;  /* IE y Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    /* Reducimos un poquito el tamaño de los botones para que entren más de golpe */
+    .btn-nav {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+        margin-right: 4px; /* Separación fija entre botones */
     }
 }
