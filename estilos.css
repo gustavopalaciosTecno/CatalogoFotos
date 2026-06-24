@@ -25,6 +25,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding-bottom: 80px; /* 🚀 ESTA LÍNEA NUEVA le da el espacio necesario para que la botonera flotante no tape nada */
 }
 
 /* Estilos para el Header del Sitio */
@@ -119,8 +120,12 @@ body {
 }
 
 .categoria {
-    margin-bottom: 4rem; /* Un poco más de espacio entre bloques de categorías */
+    margin-bottom: 2rem; /* Un poco más de espacio entre bloques de categorías */
     scroll-margin-top: 20px; /* Evita que el menú tape el título al clickear un botón */
+}
+
+.categoria:last-of-type {
+    margin-bottom: 0;
 }
 
 .categoria-header {
@@ -172,12 +177,12 @@ body {
 
 .sitio-footer {
     text-align: center;
-    padding: 3rem 2rem; /* Más espacio en el footer */
-    margin-top: auto;
+    padding: 2rem 2rem 3rem 2rem; /* Aumentamos el padding inferior para empujar el texto hacia arriba */
     background-color: #1e293b;
     border-top: 1px solid #334155;
     font-size: 0.9rem;
     color: #94a3b8;
+    width: 100%;
 }
 
 /* RESPONSIVE DESIGN / MEDIOS COMPATIBLES */
